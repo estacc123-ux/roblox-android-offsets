@@ -97,10 +97,6 @@ namespace offsets {
     //   signature: TValue* luaH_newkey(lua_State*, Table*, const TValue*)
     constexpr uint64_t luaH_newkey          = 0x059D8308;
 
-    // Anchor: function pointer passed to luaD_rawrunprotected in FUN_0249cec8
-    // Sig: void luaV_execute(lua_State*, ...)  [largest function in 059xxxxx region ~12KB]
-    constexpr uint64_t luaV_execute         = 0x059E2FCC;
-
     // Anchor: "not enough memory" init + "error in error handling" init pattern
     // Sig: void lua_newthread(lua_State*)
     constexpr uint64_t rlua_newthread       = 0x059D5860;
@@ -113,6 +109,7 @@ namespace offsets {
 
      // not yet confirmed
     constexpr uint64_t lua_pcall            = 0x0; // TODO
+    constexpr uint64_t luaV_execute         = 0x0  // TODO
     constexpr uint64_t luaF_close           = 0x0; // TODO
 
 } // namespace offsets

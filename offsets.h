@@ -24,6 +24,10 @@ namespace offsets {
     //   signature: int luau_load(lua_State*, const char*, const char*, size_t, int)
     constexpr uint64_t luau_load            = 0x03AE43D4;
 
+    // Anchor: "ScriptContext is null"
+    // Sig: void scriptStart(ScriptContext*, uintptr_t, __int128_t*)
+    constexpr uint64_t rscriptstart         = 0x03977E70; // 0x03a77e70
+
     // HOW TO FIND: Search string "C stack overflow"
     //   -> xref lands inside luaD_checkCstack (1-param, short function)
     //   -> luaD_checkCstack calls luaD_call on the nCcalls < 0xe1 path
@@ -93,11 +97,22 @@ namespace offsets {
     //   signature: TValue* luaH_newkey(lua_State*, Table*, const TValue*)
     constexpr uint64_t luaH_newkey          = 0x059D8308;
 
+    // Anchor: function pointer passed to luaD_rawrunprotected in FUN_0249cec8
+    // Sig: void luaV_execute(lua_State*, ...)  [largest function in 059xxxxx region ~12KB]
+    constexpr uint64_t luaV_execute         = 0x059E2FCC;
+
+    // Anchor: "not enough memory" init + "error in error handling" init pattern
+    // Sig: void lua_newthread(lua_State*)
+    constexpr uint64_t rlua_newthread       = 0x059D5860;
+
+    // Anchor: callers of luaD_call that check nCcalls + stack growth
+    // Sig: void luaD_precall(lua_State*, StkId, int)
+    constexpr uint64_t luaD_precall         = 0x024A029C;
+
 
 
      // not yet confirmed
     constexpr uint64_t lua_pcall            = 0x0; // TODO
-    constexpr uint64_t luaV_execute         = 0x0; // TODO
     constexpr uint64_t luaF_close           = 0x0; // TODO
 
 } // namespace offsets

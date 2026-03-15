@@ -79,12 +79,25 @@ namespace offsets {
     //   signature: void luaD_throw(lua_State*, int)
     constexpr uint64_t luaD_throw           = 0x059D0F3C;
 
-    // not yet confirmed
+    // HOW TO FIND: Search string "attempt to perform arithmetic"
+    //   -> xref at 059d05f4 -> owning function starts at 059d05ac
+    //   VERIFY: 4 params (L, obj, op_string, type_tag), calls luaG_runerror with
+    //           "attempt to perform arithmetic (%s) on %s" - does not return
+    //   signature: void luaG_typeerror(lua_State*, const TValue*, const char*)
+    constexpr uint64_t luaG_typeerror       = 0x059D05AC;
 
+    // HOW TO FIND: Search string "table overflow" -> xref at 059d8160
+    //   -> navigate through luaH_resize (059d7e20) which calls this function with a key
+    //   VERIFY: 3 params (L, Table*, TValue* key), handles hash collision via linked list,
+    //           finds free slot, writes key, returns pointer to new value slot
+    //   signature: TValue* luaH_newkey(lua_State*, Table*, const TValue*)
+    constexpr uint64_t luaH_newkey          = 0x059D8308;
+
+
+
+     // not yet confirmed
     constexpr uint64_t lua_pcall            = 0x0; // TODO
     constexpr uint64_t luaV_execute         = 0x0; // TODO
-    constexpr uint64_t luaG_typeerror       = 0x0; // TODO
-    constexpr uint64_t luaH_newkey          = 0x0; // TODO
     constexpr uint64_t luaF_close           = 0x0; // TODO
 
 } // namespace offsets

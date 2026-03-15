@@ -13,7 +13,7 @@
  *
  * All offsets are relative to the start of libroblox.so (rebase before use at runtime).
  */
-
+// current version: 2.711.876
 namespace offsets {
 
     // confirmed - directly verified

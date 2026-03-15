@@ -12,7 +12,7 @@ namespace offsets {
     constexpr uint64_t luaG_runerror        = 0x059D0490; // confirmed: variadic (L, fmt, ...) - vsnprintf into buffer, sets error string, calls luaD_throw(L, 2)
     constexpr uint64_t luaD_throw           = 0x059D0F3C; // confirmed: allocates C++ exception, stores errcode, calls __cxa_throw - does not return
 
-    // NOT YET CONFIRMED - needs Ghidra verification
+    // not confirmed - need Ghidra verification
 
      // lua_pcall: exhausted luaD_pcall/luaD_rawrunprotected caller chains in
     //   059d/024a range; unchecked: FUN_0248ef50, FUN_0248f0d8, FUN_0248f1e4

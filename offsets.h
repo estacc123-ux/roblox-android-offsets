@@ -59,7 +59,7 @@ namespace Functions {
     constexpr std::uintptr_t resume_error               = 0x5eeeab4; // [HIGH] pushes error string, returns ERRRUN
     constexpr std::uintptr_t lua_resumeerror            = 0x5eee794; // [HIGH] resume with error
     constexpr std::uintptr_t lua_yield                  = 0x25d93b8; // [HIGH] sets status=YIELD, base=top-nresults
-    constexpr std::uintptr_t lua_isyieldable            = 0x25a63fc; // [HIGH] ci==base_ci && base==top && status==0
+    constexpr std::uintptr_t lua_isthreadreset          = 0x25a63fc; // [HIGH] i mixed this is up with lua_isyieldable, but that is still TODO, it checks nCcalls <= baseCcalls
     constexpr std::uintptr_t luaC_threadbarrier         = 0x25ac714; // [HIGH] GC barrier for threads
     constexpr std::uintptr_t coclose                    = 0x5eeca94; // [HIGH] coroutine.close implementation
     constexpr std::uintptr_t lua_resetthread            = 0x265c8d8; // [HIGH] resets thread state

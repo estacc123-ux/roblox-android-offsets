@@ -17,8 +17,7 @@ namespace Structs {
     constexpr std::uintptr_t atomTable                               = 0x6de10b8; // [HIGH] ptr[] string atom lookup, namecall indexes into this
     constexpr std::uintptr_t Vector3_methodTable                     = 0x6a2fec8; // [HIGH] Vector3 namecall dispatch table
     constexpr std::uintptr_t RBXScriptSignal_tag                     = 0x6a2ee40; // [HIGH] userdata tag for RBXScriptSignal
-    constexpr std::uintptr_t RBXScriptSignal_name                    = 0x68c3dc8; // [HIGH] ptr to "RBXScriptSignal"
-    constexpr std::uintptr_t LazyInit_registry                       = 0x6ed3b00; // [MED]  lazy init registration table
+    constexpr std::uintptr_t RBXScriptSignal_name                    = 0x68c3dc8; // [HIGH] ptr to "RBXScriptSignal
     constexpr std::uintptr_t nilCallback_sentinel                    = 0x6a35f60; // [HIGH] "nil function" sentinel value
 }
 

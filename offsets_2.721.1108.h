@@ -230,8 +230,9 @@ constexpr std::uintptr_t lua_index2addr_pseudo       = 0x60c3e00; // [HIGH] hand
 constexpr std::uintptr_t lua_clock                   = 0x261ac7c; // [HIGH] high-resolution timer
 
 // Bytecode Loading (lvmload.cpp)
-constexpr std::uintptr_t luau_load                   = 0x60e1a40; // [HIGH] bytecode deserializer (1000+ lines)
+constexpr std::uintptr_t luau_load                   = 0x60e1a40; // [HIGH] 
 constexpr std::uintptr_t luau_verify                 = 0x2632a70; // [HIGH] bytecode signature verification
+constexpr std::uintptr_t loadsafe                    = 0x60e1a40; // [HIGH] bytecode deserializer (1000+ lines)
 
 // Bytecode Verification (Roblox crypto)
 constexpr std::uintptr_t CryptoContext_getOrInit     = 0x3ea3b34; // [HIGH] lazy singleton init

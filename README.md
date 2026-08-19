@@ -1,4 +1,4 @@
-This is a walkthrough of how I reverse-engineered Roblox's Luau v, from `libroblox.so`, a stripped ARM64 shared library with no debug info, no symbolsy. By the end I had identified 140+ functions, all 88 opcode handlers, the complete opcode shuffle mapping, 10+ data structures at field level, and the bytecode signing system.
+This is a walkthrough of how I reverse-engineered Roblox's Luau VM from `libroblox.so`, a stripped ARM64 shared library with no debug info and no symbols. By the end I had identified 140+ functions, all 88 opcode handlers, the complete opcode shuffle mapping, 10+ data structures at field level, and the bytecode signing system.
 
 Just Ghidra, patience, and an unhealthy amount of time spent staring at decompiled C.
 
@@ -42,10 +42,17 @@ Luau is Roblox's fork of Lua 5.1. It ships with a type-aware bytecode compiler, 
 | Bytecode signature system | Complete flow | Documented |
 
 ### Target
-
 - **Binary**: `libroblox.so` (ARM64/AArch64)
 - **Platform**: Android (Roblox mobile client)
 - **Tools**: Ghidra
+
+### Files in this repo
+| File | Contents |
+|---|---|
+| `offsets_2.734.917.h` | Verified function offsets for Roblox Android **2.734.917** (image base 0x0) |
+| `offsets_2.721.1108.h` | Verified function offsets for Roblox Android **2.721.1108** (image base 0x01000000) |
+| `offsets_2.720.1167.h` | Verified function offsets for Roblox Android **2.720.1167** (image base 0x01000000) |
+| `error_message_string.txt` | The error strings used as anchor points in this walkthrough |
 
 ---
 

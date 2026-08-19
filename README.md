@@ -50,8 +50,8 @@ Luau is Roblox's fork of Lua 5.1. It ships with a type-aware bytecode compiler, 
 | File | Contents |
 |---|---|
 | `offsets_2.734.917.h` | Verified function offsets for Roblox Android **2.734.917** (image base 0x0) |
-| `offsets_2.721.1108.h` | Verified function offsets for Roblox Android **2.721.1108** (image base 0x01000000) |
-| `offsets_2.720.1167.h` | Verified function offsets for Roblox Android **2.720.1167** (image base 0x01000000) |
+| `offsets_2.721.1108.h` | Verified function offsets for Roblox Android **2.721.1108** (image base 00100000) |
+| `offsets_2.720.1167.h` | Verified function offsets for Roblox Android **2.720.1167** (image base 00100000) |
 | `error_message_string.txt` | The error strings used as anchor points in this walkthrough |
 
 ---

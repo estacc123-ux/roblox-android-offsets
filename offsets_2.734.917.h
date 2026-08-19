@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <cstddef>
 // All of these are verified
+// image base is 0x0
 namespace config {
 
     namespace addresses {
